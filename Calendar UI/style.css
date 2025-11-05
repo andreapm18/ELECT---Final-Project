@@ -149,18 +149,6 @@
     position: relative;
 }
 
-/* Floating Sidebar */
-.sidebar {
-    width: 280px;
-    background-color: var(--surface);
-    border-radius: var(--radius);
-    padding: 24px;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    height: 100%;            /* Match the calendar height */
-    overflow-y: auto;        /* Allow scroll if content is longer */
-}
 
 
 .logo {
@@ -921,7 +909,7 @@
 .view-controls {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
     background: var(--accent);
     border-radius: 12px;
     padding: 4px;
