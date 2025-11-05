@@ -542,5 +542,33 @@ function setupEventListeners() {
     });
 }
 
+// Upcoming Events Panel Collapse Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const collapseBtn = document.getElementById('collapseEvents');
+    const eventsContent = document.getElementById('upcomingEventsContent');
+    const collapseIcon = collapseBtn.querySelector('i');
+    
+    if (collapseBtn && eventsContent) {
+        collapseBtn.addEventListener('click', function() {
+            eventsContent.classList.toggle('collapsed');
+            
+            if (eventsContent.classList.contains('collapsed')) {
+                collapseIcon.className = 'fas fa-chevron-up';
+            } else {
+                collapseIcon.className = 'fas fa-chevron-down';
+            }
+        });
+    }
+    
+    // View Controls (purely aesthetic)
+    const viewOptions = document.querySelectorAll('.view-option');
+    viewOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            viewOptions.forEach(opt => opt.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
+
 // Initialize the calendar when page loads
 document.addEventListener('DOMContentLoaded', initCalendar);
