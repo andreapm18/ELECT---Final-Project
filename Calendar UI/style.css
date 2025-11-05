@@ -908,7 +908,7 @@
 .view-controls {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
     background: var(--accent);
     border-radius: 12px;
     padding: 4px;
