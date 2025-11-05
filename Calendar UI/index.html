@@ -157,25 +157,144 @@
         </div>
     </div>
 
-    <!-- Rest of your existing modals remain unchanged -->
     <!-- Add Event Modal -->
     <div class="modal" id="eventModal">
-        <!-- ... existing modal content ... -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Event</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventTitle">Event Title</label>
+                    <input type="text" id="eventTitle" class="form-control" placeholder="Enter title" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventDate">Date</label>
+                        <input type="date" id="eventDate" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventTime">Time</label>
+                        <input type="time" id="eventTime" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="eventCategory">Category</label>
+                    <select id="eventCategory" class="form-control" required>
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="meeting">Meeting</option>
+                        <option value="health">Health</option>
+                        <option value="social">Social</option>
+                        <option value="school">School</option>
+                        <option value="occasion">Occasion</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">Description</label>
+                    <textarea id="eventDescription" class="form-control" rows="3" placeholder="Add any notes"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelEvent">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Event</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- Import AI Modal -->
     <div class="modal" id="importModal">
-        <!-- ... existing modal content ... -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Import Events with AI</h2>
+                <button class="close-btn" id="closeImportModal">&times;</button>
+            </div>
+            <div class="form-group">
+                <label for="aiInput">Describe the events you want to add</label>
+                <textarea id="aiInput" class="form-control" rows="6" placeholder="e.g., Meeting with marketing team next Tuesday at 2 PM"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelImport">Cancel</button>
+                <button type="button" class="btn btn-primary" id="processImport">Process</button>
+            </div>
+        </div>
     </div>
 
     <!-- Event Details Modal -->
     <div class="modal" id="eventDetailsModal">
-        <!-- ... existing modal content ... -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="eventDetailsTitle">Event Details</h2>
+                <button class="close-btn" id="closeEventDetails">&times;</button>
+            </div>
+            <div class="form-group">
+                <span id="eventCategoryBadge" class="event-category">Category</span>
+            </div>
+            <div class="form-group">
+                <label>Date</label>
+                <p id="eventDetailsDate">—</p>
+            </div>
+            <div class="form-group">
+                <label>Time</label>
+                <p id="eventDetailsTime">—</p>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <p id="eventDetailsDescription">—</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="closeEventDetailsBtn">Close</button>
+                <button type="button" class="btn btn-primary" id="editEventBtn">Edit</button>
+                <button type="button" class="btn btn-danger" id="deleteEventBtn">Delete</button>
+            </div>
+        </div>
     </div>
 
     <!-- Edit Event Modal -->
     <div class="modal" id="editEventModal">
-        <!-- ... existing modal content ... -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Event</h2>
+                <button class="close-btn" id="closeEditModal">&times;</button>
+            </div>
+            <form id="editEventForm">
+                <div class="form-group">
+                    <label for="editEventTitle">Event Title</label>
+                    <input type="text" id="editEventTitle" class="form-control" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editEventDate">Date</label>
+                        <input type="date" id="editEventDate" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editEventTime">Time</label>
+                        <input type="time" id="editEventTime" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="editEventCategory">Category</label>
+                    <select id="editEventCategory" class="form-control" required>
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="meeting">Meeting</option>
+                        <option value="health">Health</option>
+                        <option value="social">Social</option>
+                        <option value="school">School</option>
+                        <option value="occasion">Occasion</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editEventDescription">Description</label>
+                    <textarea id="editEventDescription" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelEdit">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="script.js"></script>
