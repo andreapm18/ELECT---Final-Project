@@ -848,3 +848,277 @@
         padding: 15px;
     }
 }
+
+/* Add these styles to your existing CSS file */
+
+/* Search Box Styles */
+.search-container {
+    margin-bottom: 24px;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--accent);
+    border-radius: 12px;
+    padding: 12px 16px;
+    transition: var(--transition);
+}
+
+.search-box:focus-within {
+    background: var(--surface);
+    box-shadow: 0 0 0 2px var(--primary);
+}
+
+.search-box i {
+    color: var(--text-light);
+    margin-right: 12px;
+    font-size: 16px;
+}
+
+.search-input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.search-input::placeholder {
+    color: var(--text-light);
+}
+
+/* View Controls Styles */
+.view-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--accent);
+    border-radius: 12px;
+    padding: 4px;
+    margin-left: 16px;
+}
+
+.view-option {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.view-option:hover {
+    color: var(--text);
+    background: var(--surface);
+}
+
+.view-option.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Calendar Layout */
+.calendar-layout {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+}
+
+.calendar-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Upcoming Events Panel */
+.upcoming-events-panel {
+    width: 300px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.upcoming-events-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.upcoming-events-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.collapse-btn {
+    background: var(--accent);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.collapse-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.upcoming-events-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    transition: var(--transition);
+}
+
+.upcoming-events-content.collapsed {
+    display: none;
+}
+
+.upcoming-event {
+    background: var(--accent);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: var(--transition);
+    border-left: 4px solid var(--primary);
+}
+
+.upcoming-event:hover {
+    transform: translateX(4px);
+    background: var(--secondary);
+}
+
+.upcoming-event:last-child {
+    margin-bottom: 0;
+}
+
+.event-time {
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.event-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.event-category {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Category styles for upcoming events */
+.event-category.category-work {
+    background: color-mix(in srgb, var(--category-work) 15%, transparent);
+    color: var(--category-work);
+    border: 1px solid color-mix(in srgb, var(--category-work) 30%, transparent);
+}
+
+.event-category.category-personal {
+    background: color-mix(in srgb, var(--category-personal) 15%, transparent);
+    color: var(--category-personal);
+    border: 1px solid color-mix(in srgb, var(--category-personal) 30%, transparent);
+}
+
+.event-category.category-meeting {
+    background: color-mix(in srgb, var(--category-meeting) 15%, transparent);
+    color: var(--category-meeting);
+    border: 1px solid color-mix(in srgb, var(--category-meeting) 30%, transparent);
+}
+
+.event-category.category-health {
+    background: color-mix(in srgb, var(--category-health) 15%, transparent);
+    color: var(--category-health);
+    border: 1px solid color-mix(in srgb, var(--category-health) 30%, transparent);
+}
+
+.event-category.category-social {
+    background: color-mix(in srgb, var(--category-social) 15%, transparent);
+    color: var(--category-social);
+    border: 1px solid color-mix(in srgb, var(--category-social) 30%, transparent);
+}
+
+.event-category.category-school {
+    background: color-mix(in srgb, var(--category-school) 15%, transparent);
+    color: var(--category-school);
+    border: 1px solid color-mix(in srgb, var(--category-school) 30%, transparent);
+}
+
+.event-category.category-occasion {
+    background: color-mix(in srgb, var(--category-occasion) 15%, transparent);
+    color: var(--category-occasion);
+    border: 1px solid color-mix(in srgb, var(--category-occasion) 30%, transparent);
+}
+
+/* Responsive Design Updates */
+@media (max-width: 1200px) {
+    .calendar-layout {
+        flex-direction: column;
+    }
+    
+    .upcoming-events-panel {
+        width: 100%;
+        max-height: 200px;
+    }
+    
+    .view-controls {
+        margin-left: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .view-controls {
+        display: none;
+    }
+    
+    .upcoming-events-panel {
+        max-height: 180px;
+    }
+    
+    .upcoming-event {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .search-box {
+        padding: 10px 12px;
+    }
+    
+    .upcoming-events-header {
+        padding: 16px;
+    }
+    
+    .upcoming-events-content {
+        padding: 16px;
+    }
+}
