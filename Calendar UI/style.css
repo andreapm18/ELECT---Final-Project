@@ -149,19 +149,6 @@
     position: relative;
 }
 
-/* Floating Sidebar */
-.sidebar {
-    width: 280px;
-    background-color: var(--surface);
-    border-radius: var(--radius);
-    padding: 24px;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    height: 100%;            /* Match the calendar height */
-    overflow-y: auto;        /* Allow scroll if content is longer */
-}
-
 
 .logo {
     display: flex;
@@ -360,7 +347,7 @@
 .month-nav {
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: 8px;
     position: relative;
     height: 40px;
     flex-shrink: 0; 
@@ -1023,7 +1010,7 @@
 }
 
 .upcoming-event {
-    background: var(--accent);
+    background: var(--background);
     border-radius: 12px;
     padding: 16px;
     margin-bottom: 12px;
@@ -1167,7 +1154,7 @@
 /* Faint Left Panel Background */
 .sidebar {
     width: 280px;
-    background-color: var(--sidebar-bg, #FFF1C9); /* Add this variable */
+    background-color: var(--background); /* Add this variable */
     border-radius: 0; /* Remove border radius for seamless look */
     padding: 24px;
     box-shadow: none; /* Remove shadow for unified look */
@@ -1209,7 +1196,7 @@
 
 /* Remove body background and center the unified card */
 .body-index {
-    background-color: var(--background);
+    background-color: white;
     color: var(--text);
     min-height: 100vh;
     display: flex;
