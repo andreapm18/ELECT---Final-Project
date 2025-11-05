@@ -360,7 +360,7 @@
 .month-nav {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 100px;
     position: relative;
     height: 40px;
     flex-shrink: 0; 
