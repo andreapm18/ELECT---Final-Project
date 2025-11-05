@@ -283,17 +283,14 @@
     align-items: center;
     margin-bottom: 24px;
     flex-shrink: 0;
+    gap: 16px; 
 }
 
 .calendar-actions {
     display: flex;
     gap: 15px;
-    /* Remove the old bottom positioning styles */
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
-    /* Align with the month navigation */
     align-items: center;
+    flex-shrink: 0; /* Prevent shrinking */
 }
 
 .btn {
@@ -351,9 +348,10 @@
     align-items: center;
     gap: 12px;
     position: relative;
-    /* Ensure proper vertical alignment */
-    height: 40px; /* Match button height */
+    height: 40px;
+    flex-shrink: 0; 
 }
+
 
 .month-nav h3 {
     font-size: 22px;
@@ -891,7 +889,7 @@
     color: var(--text-light);
 }
 
-/* View Controls Styles */
+/* Updated View Controls Styles */
 .view-controls {
     display: flex;
     align-items: center;
@@ -899,8 +897,10 @@
     background: var(--accent);
     border-radius: 12px;
     padding: 4px;
-    margin-left: 16px;
+    margin-left: auto; /* This will push it to the right */
+    margin-right: 16px; /* Space before Import AI button */
 }
+
 
 .view-option {
     padding: 8px 16px;
