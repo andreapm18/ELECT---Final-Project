@@ -22,11 +22,13 @@
     /* Category Colors - Refined Honeycomb Harmony */
     --category-work: #FFB3BA;     /* Pastel Red */
     --category-personal: #FFDFBA; /* Pastel Orange */
-    --category-meeting: #FFFFBA;  /* Pastel Yellow */
+    --category-meeting: #A8E6CF;  /* Pastel Teal */
     --category-health: #BAFFC9;   /* Pastel Green */
     --category-social: #BAE1FF;   /* Pastel Blue */
     --category-school: #E0BAFF;   /* Pastel Indigo/Violet */
     --category-occasion: #FFBAED; /* Pastel Pink */
+
+
 
 
 }
@@ -292,12 +294,13 @@
     gap: 15px;
     align-items: center;
     flex-shrink: 0; /* Prevent shrinking */
+    margin-right: 10px;
 }
 
 .btn {
     padding: 12px 20px;
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
     cursor: pointer;
     font-weight: 600;
     display: flex;
@@ -347,7 +350,7 @@
 .month-nav {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
     position: relative;
     height: 40px;
     flex-shrink: 0; 
@@ -913,7 +916,7 @@
     border-radius: 12px;
     padding: 4px;
     margin-left: auto; /* This will push it to the right */
-    margin-right: 16px; /* Space before Import AI button */
+    margin-right: 10px; /* Space before Import AI button */
 }
 
 
@@ -1015,7 +1018,7 @@
     padding: 16px;
     margin-bottom: 12px;
     transition: var(--transition);
-    border-left: 4px solid var(--primary);
+    border-left: 4px solid var(--background);
 }
 
 .upcoming-event:hover {

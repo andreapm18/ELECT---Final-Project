@@ -6,6 +6,9 @@
     <title>AI Calendar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body class="body-index">
     <div class="app-container">
@@ -79,7 +82,7 @@
                             </div>
                             <div class="date-picker-actions">
                                 <button class="btn btn-secondary btn-small" id="datePickerToday">Today</button>
-                                <button class="btn btn-primary btn-small" id="datePickerClose">Close</button>
+                                <button class="btn btn-primary btn-small" id="datePickerClose">Cancel</button>
                             </div>
                         </div>
                     </div>
@@ -158,50 +161,51 @@
     </div>
 
     <!-- Add Event Modal -->
-    <div class="modal" id="eventModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Add Event</h2>
-                <button class="close-btn" id="closeModal">&times;</button>
-            </div>
-            <form id="eventForm">
-                <div class="form-group">
-                    <label for="eventTitle">Event Title</label>
-                    <input type="text" id="eventTitle" class="form-control" placeholder="Enter title" required>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="eventDate">Date</label>
-                        <input type="date" id="eventDate" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="eventTime">Time</label>
-                        <input type="time" id="eventTime" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="eventCategory">Category</label>
-                    <select id="eventCategory" class="form-control" required>
-                        <option value="work">Work</option>
-                        <option value="personal">Personal</option>
-                        <option value="meeting">Meeting</option>
-                        <option value="health">Health</option>
-                        <option value="social">Social</option>
-                        <option value="school">School</option>
-                        <option value="occasion">Occasion</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="eventDescription">Description</label>
-                    <textarea id="eventDescription" class="form-control" rows="3" placeholder="Add any notes"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="cancelEvent">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save Event</button>
-                </div>
-            </form>
+<div class="modal" id="eventModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2><i class="bi bi-calendar-event"></i> Add Event</h2>
+            <button class="close-btn" id="closeModal"><i class="bi bi-x-lg"></i></button>
         </div>
+        <form id="eventForm">
+            <div class="form-group">
+                <label for="eventTitle">Event Title</label>
+                <input type="text" id="eventTitle" class="form-control" placeholder="Enter title" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="eventDate"><i class="bi bi-calendar"></i> Date</label>
+                    <input type="date" id="eventDate" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventTime"><i class="bi bi-clock"></i> Time</label>
+                    <input type="time" id="eventTime" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="eventCategory">Category</label>
+                <select id="eventCategory" class="form-control" required>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="meeting">Meeting</option>
+                    <option value="health">Health</option>
+                    <option value="social">Social</option>
+                    <option value="school">School</option>
+                    <option value="occasion">Occasion</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="eventDescription"><i class="bi bi-align-left"></i> Description</label>
+                <textarea id="eventDescription" class="form-control" rows="3" placeholder="Add any notes"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelEvent"><i class="bi bi-x-lg"></i>Cancel</button>
+                <button type="submit" class="btn btn-primary"><i class="bi bi-floppy"></i>Save Event</button>
+            </div>
+        </form>
     </div>
+</div>
+
 
     <!-- Import AI Modal -->
     <div class="modal" id="importModal">
@@ -215,87 +219,89 @@
                 <textarea id="aiInput" class="form-control" rows="6" placeholder="e.g., Meeting with marketing team next Tuesday at 2 PM"></textarea>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="cancelImport">Cancel</button>
-                <button type="button" class="btn btn-primary" id="processImport">Process</button>
+                <button type="button" class="btn btn-secondary" id="cancelImport"><i class="bi bi-x-lg"></i>Cancel</button>
+                <button type="button" class="btn btn-primary" id="processImport"><i class="bi bi-gear"></i>Process</button>
             </div>
         </div>
     </div>
 
     <!-- Event Details Modal -->
-    <div class="modal" id="eventDetailsModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="eventDetailsTitle">Event Details</h2>
-                <button class="close-btn" id="closeEventDetails">&times;</button>
-            </div>
-            <div class="form-group">
-                <span id="eventCategoryBadge" class="event-category">Category</span>
-            </div>
-            <div class="form-group">
-                <label>Date</label>
-                <p id="eventDetailsDate">—</p>
-            </div>
-            <div class="form-group">
-                <label>Time</label>
-                <p id="eventDetailsTime">—</p>
-            </div>
-            <div class="form-group">
-                <label>Description</label>
-                <p id="eventDetailsDescription">—</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="closeEventDetailsBtn">Close</button>
-                <button type="button" class="btn btn-primary" id="editEventBtn">Edit</button>
-                <button type="button" class="btn btn-danger" id="deleteEventBtn">Delete</button>
-            </div>
+<div class="modal" id="eventDetailsModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="eventDetailsTitle"><i class="bi bi-calendar-event"></i> Event Details</h2>
+            <button class="close-btn" id="closeEventDetails"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="form-group">
+            <span id="eventCategoryBadge" class="event-category">Category</span>
+        </div>
+        <div class="form-group">
+            <label><i class="bi bi-calendar"></i> Date</label>
+            <p id="eventDetailsDate">—</p>
+        </div>
+        <div class="form-group">
+            <label><i class="bi bi-clock"></i> Time</label>
+            <p id="eventDetailsTime">—</p>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-align-left"></i> Description</label>
+            <p id="eventDetailsDescription">—</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="closeEventDetailsBtn"><i class="bi bi-x-lg"></i> Cancel</button>
+            <button type="button" class="btn btn-primary" id="editEventBtn"><i class="bi bi-pencil-square"></i> Edit</button>
+            <button type="button" class="btn btn-danger" id="deleteEventBtn"><i class="bi bi-trash"></i> Delete</button>
         </div>
     </div>
+</div>
+
 
     <!-- Edit Event Modal -->
-    <div class="modal" id="editEventModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Edit Event</h2>
-                <button class="close-btn" id="closeEditModal">&times;</button>
-            </div>
-            <form id="editEventForm">
-                <div class="form-group">
-                    <label for="editEventTitle">Event Title</label>
-                    <input type="text" id="editEventTitle" class="form-control" required>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="editEventDate">Date</label>
-                        <input type="date" id="editEventDate" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="editEventTime">Time</label>
-                        <input type="time" id="editEventTime" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="editEventCategory">Category</label>
-                    <select id="editEventCategory" class="form-control" required>
-                        <option value="work">Work</option>
-                        <option value="personal">Personal</option>
-                        <option value="meeting">Meeting</option>
-                        <option value="health">Health</option>
-                        <option value="social">Social</option>
-                        <option value="school">School</option>
-                        <option value="occasion">Occasion</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="editEventDescription">Description</label>
-                    <textarea id="editEventDescription" class="form-control" rows="3"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="cancelEdit">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
-                </div>
-            </form>
+<div class="modal" id="editEventModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2><i class="bi bi-pencil-square"></i> Edit Event</h2>
+            <button class="close-btn" id="closeEditModal"><i class="bi bi-x-lg"></i></button>
         </div>
+        <form id="editEventForm">
+            <div class="form-group">
+                <label for="editEventTitle">Event Title</label>
+                <input type="text" id="editEventTitle" class="form-control" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="editEventDate"><i class="bi bi-calendar"></i> Date</label>
+                    <input type="date" id="editEventDate" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="editEventTime"><i class="bi bi-clock"></i> Time</label>
+                    <input type="time" id="editEventTime" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="editEventCategory">Category</label>
+                <select id="editEventCategory" class="form-control" required>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="meeting">Meeting</option>
+                    <option value="health">Health</option>
+                    <option value="social">Social</option>
+                    <option value="school">School</option>
+                    <option value="occasion">Occasion</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="editEventDescription"><i class="bi bi-align-left"></i> Description</label>
+                <textarea id="editEventDescription" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelEdit"><i class="bi bi-x-lg"></i> Cancel</button>
+                <button type="submit" class="btn btn-primary"><i class="bi bi-floppy"></i> Save Changes</button>
+            </div>
+        </form>
     </div>
+</div>
+
 
     <script src="script.js"></script>
 </body>
