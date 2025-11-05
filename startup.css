@@ -29,14 +29,17 @@
         }
 
 
-        body {
-            background: var(--background);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
-        }
+body {
+    background: linear-gradient(135deg, #FFF6E0, #FFECB3, #FFE094);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+
+
 
         .navbar {
             display: flex;
@@ -98,14 +101,20 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 24px;
-            background: linear-gradient(90deg, var(--text), var(--category-work));
+            color: #5C4033;
+            font-size: 2.9rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #5C4033 0%, #8B5E00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.2;
+            background-clip: text;
+            position: relative;
         }
+
+
 
         .hero p {
             font-size: 1.25rem;

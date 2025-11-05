@@ -20,13 +20,14 @@
     --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     /* Category Colors - Refined Honeycomb Harmony */
-    --category-work: #E6A700;     /* Classic Golden Honey */
-    --category-personal: #E67E58; /* Muted Terracotta Peach */
-    --category-meeting: #F5C84C;  /* Polished Amber Glow */
-    --category-health: #A6CF98;   /* Soft Herbal Green */
-    --category-social: #C49EC4;   /* Gentle Lavender Honey */
-    --category-school: #F2B880;   /* Warm Apricot Nectar */
-    --category-occasion: #F7A8B8; /* Soft Rose Quartz Pink */
+    --category-work: #FFB3BA;     /* Pastel Red */
+    --category-personal: #FFDFBA; /* Pastel Orange */
+    --category-meeting: #FFFFBA;  /* Pastel Yellow */
+    --category-health: #BAFFC9;   /* Pastel Green */
+    --category-social: #BAE1FF;   /* Pastel Blue */
+    --category-school: #E0BAFF;   /* Pastel Indigo/Violet */
+    --category-occasion: #FFBAED; /* Pastel Pink */
+
 
 }
 
@@ -61,11 +62,13 @@
     text-align: center;
     margin-bottom: 30px;
 }
-
+    
 .auth-header h1 {
-    color: var(--primary);
+    color: #5C4033; /* warm deep brown */
     margin-bottom: 10px;
+    font-size: 1.7rem;
 }
+
 
 .auth-header p {
     color: var(--text-light);
@@ -88,6 +91,7 @@
     border-radius: 8px;
     cursor: pointer;
     transition: var(--transition);
+    color: var(--text);
     font-weight: 600;
 }
 
@@ -104,14 +108,24 @@
     display: block;
 }
 
+.auth-form label {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.auth-form input::placeholder {
+    color: var(--text-light);
+}
+
 .form-footer {
     text-align: center;
     margin-top: 20px;
 }
 
 .form-footer a {
-    color: var(--primary);
+    color: var(--text);
     text-decoration: none;
+    font-size: 15px;
 }
 
 /* Main Calendar Styles */
@@ -610,17 +624,18 @@
 }
 
 .event {
-    background-color: var(--accent);
+    color: var(--text) !important; /* White text for contrast */
     padding: 6px 10px;
     border-radius: 8px;
     margin-bottom: 4px;
     font-size: 12px;
     cursor: pointer;
-    border-left: 3px solid var(--primary);
     transition: var(--transition);
     flex-shrink: 0;
     word-break: break-word;
+    font-weight: 600; /* Make text bold */
 }
+
 
 .event:hover {
     transform: translateX(4px);
@@ -637,40 +652,50 @@
 }
 
 /* Category Colors for Events */
+/* Category Text Colors */
 .event.category-work {
-    border-left: 4px solid var(--category-work);
-    background-color: color-mix(in srgb, var(--category-work) 15%, transparent);
+    border-left: 4px solid var(--category-work) !important;
+    background-color: color-mix(in srgb, var(--category-work) 20%, white) !important;
+    color: color-mix(in srgb, var(--category-work) 70%, black) !important; /* darker text */
 }
 
 .event.category-personal {
-    border-left: 4px solid var(--category-personal);
-    background-color: color-mix(in srgb, var(--category-personal) 15%, transparent);
+    border-left: 4px solid var(--category-personal) !important;
+    background-color: color-mix(in srgb, var(--category-personal) 20%, white) !important;
+    color: color-mix(in srgb, var(--category-personal) 70%, black) !important;
 }
 
 .event.category-meeting {
-    border-left: 4px solid var(--category-meeting);
-    background-color: color-mix(in srgb, var(--category-meeting) 15%, transparent);
+    border-left: 4px solid var(--category-meeting) !important;
+    background-color: color-mix(in srgb, var(--category-meeting) 20%, white) !important;
+    color: color-mix(in srgb, var(--category-meeting) 70%, black) !important;
 }
 
 .event.category-health {
-    border-left: 4px solid var(--category-health);
-    background-color: color-mix(in srgb, var(--category-health) 15%, transparent);
+    border-left: 4px solid var(--category-health) !important;
+    background-color: color-mix(in srgb, var(--category-health) 20%, transparent) !important;
+    color: color-mix(in srgb, var(--category-health) 80%, black) !important;
 }
 
 .event.category-social {
-    border-left: 4px solid var(--category-social);
-    background-color: color-mix(in srgb, var(--category-social) 15%, transparent);
+    border-left: 4px solid var(--category-social) !important;
+    background-color: color-mix(in srgb, var(--category-social) 15%, white) !important;
+    color: color-mix(in srgb, var(--category-social) 70%, black) !important;
 }
 
 .event.category-school {
-    border-left: 4px solid var(--category-school);
-    background-color: color-mix(in srgb, var(--category-social) 15%, transparent);
+    border-left: 4px solid var(--category-school) !important;
+    background-color: color-mix(in srgb, var(--category-school) 15%, white) !important;
+    color: color-mix(in srgb, var(--category-school) 70%, black) !important;
 }
 
 .event.category-occasion {
-    border-left: 4px solid var(--category-occasion);
-    background-color: color-mix(in srgb, var(--category-occasion) 15%, transparent);
+    border-left: 4px solid var(--category-occasion) !important;
+    background-color: color-mix(in srgb, var(--category-occasion) 15%, white) !important;
+    color: color-mix(in srgb, var(--category-occasion) 70%, black) !important;
 }
+
+
 
 
 
@@ -848,3 +873,5 @@
         padding: 15px;
     }
 }
+
+
